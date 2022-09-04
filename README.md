@@ -30,12 +30,12 @@ All this will allow to measure frequency of internal oscillator despite slow IO.
 # Out pinout: 
 ```
 0: clock divided by 2^8 (regardles of in2)
-1: clock divided by 2^12
-2: clock divided by 2^16
-3: clock divided by 2^20
-4: clock divided by 2^24
-5: clock divided by 2^28
-6: clock divided by 2^32
+1: clock divided by 2^8(12 if in2 is on)
+2: clock divided by 2^12(16)
+3: clock divided by 2^16(20)
+4: clock divided by 2^20(24)
+5: clock divided by 2^24(28)
+6: clock divided by 2^28(32)
 7: Bit 5 of shift register (to ensure it's not optimized away)
 ```
 
