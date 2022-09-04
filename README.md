@@ -15,3 +15,27 @@ Then 2 MUXes allow to select ether external clock or 2 oscillators/16.
 Finally, there is 28-stage counter, with taps every 4 bit (32 bit total). 
 
 All this will allow to measure frequency of internal oscillator despite slow IO.
+
+# In pinout: 
+```
+0: clock in (for debugging)
+1: Oscillator select (0 - 3XOR divided by 16, 1 - 5XOR divided by 16)
+2: Enable additional x16 divider
+3: shift register data (must shift in 5x 1 to enable oscillators)
+4: shift register clock
+6: debug (replaces 5XOR oscillator with clkin signal)
+7: unused
+```
+
+# Out pinout: 
+```
+0: clock divided by 2^8 (regardles of in2)
+1: clock divided by 2^12
+2: clock divided by 2^16
+3: clock divided by 2^20
+4: clock divided by 2^24
+5: clock divided by 2^28
+6: clock divided by 2^32
+7: Bit 5 of shift register (to ensure it's not optimized away)
+```
+
